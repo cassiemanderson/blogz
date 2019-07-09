@@ -2,7 +2,7 @@
     <h1>Build A Blog!</h1>
     <form method='post'>
         <label>
-            New Task:
+            New Blog:
             <input type="text" name='blog' />
         </label>
         <input type="submit" value='Add Blog' />
@@ -16,7 +16,7 @@
 
         <ul>
             {% for blog in blogs %}
-            <li>{{blog}}</li>
+            <li>{{blog.name}}</li>
             {% endfor %}
         </ul>
 
