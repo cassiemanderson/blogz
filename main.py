@@ -25,9 +25,6 @@ def display_posts():
         blog = Blog.query.get(id)
         return render_template('singleblog.html', titlebase= 'Build A Blog!', blog = blog)
 
-        blogs = Blog.query.all()
-        return render_template('blog.html, blogs=blogs')
-
     else:
         blogs = Blog.query.all()
         return render_template('blog.html', titlebase = 'Build a Blog', blogs=blogs)
