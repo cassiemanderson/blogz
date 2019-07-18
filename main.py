@@ -173,20 +173,7 @@ def newpost():
 
 @app.route('/', methods=['GET'])
 def index():
-    #blogs = []
-    #id = request.args.get('id')
-    #if 'id' in request.args:
-
-        #blogs = Blog.query.filter_by(id=id).first()
-        #return render_template('singleblog.html', blogs=blogs)
-
-    #users = User.query.all()
-    #return redirect('index.html', users=users)
- 
     users = User.query.all()
-    #posted_blogs = Blog.query.all()    
-    #osted_blogs = Blog.query.filter_by(owner_id=owner_id).all()
-    #return render_template('index.html',users=users)
     return render_template('index.html' , users=users)
 
 if __name__ == '__main__':
