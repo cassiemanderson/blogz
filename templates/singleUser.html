@@ -2,13 +2,19 @@
 
 {% block content %}
 
-    {% is user_blogs|length == 0 %}
+    {% if user_blogs|length == 0 %}
         <p> Blog posts are empty</p>
 
         {% else %}
             {% for blog in user_blogs %}
-                <h2><a href='/?id={{blog.id}}'>{{blog.title}}</a></h2>
+                <h2><a href='blog?id={{blog.id}}'>{{blog.title}}</a></h2>
                 <p>{{blog.body}}</p>
+
+                <div>written by 
+
+                    <a href="blog?user_id={{blog.owner.id}}">{{blog.owner.username}}</a>
+
+                </div>
             {% endfor %}
         {% endif %}
     {% endblock %}
